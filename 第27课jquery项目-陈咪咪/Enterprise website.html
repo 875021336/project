@@ -1,0 +1,392 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>第28课网页项目</title>
+<!--<script type="text/javascript" src="file:///C|/Users/wei/Desktop/线下培训课/jquery/jquery-3.2.1.js"></script>-->
+	<title>Bootstrap 实例 - 轮播（Carousel）插件的标题</title>
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+<style>
+*{ margin:0; padding:0; list-style:none;}
+.ma_clear:after{ clear:both; content:""; display:block; height:0; }
+.ma_clear{*zoom:1;}
+a{ text-decoration:none; color:#000; font-size:20px;}
+a:hover{ color:#6FC;}
+body{ font-family:微软雅黑;}
+.pmu{ width:70%; margin:0 auto;}
+
+
+.yxfu{ width:80px; height:394px; position: fixed; bottom: 150px;right:20px;z-index: 99;}
+.yxfu li{ width:50px; height:50px; border-radius:50%; margin:0 auto; margin-bottom:20px;}
+.yxfu li:hover{ background-color:rgba((204,204,204,.4));}
+.carousel{ width:100%;  overflow:hidden;}
+.item img{ width:100%; }
+
+.navigation{ width:100%; height:78px; background-color:rgba(204,204,204,.6);position: fixed; top:0;left:0; }
+.bar{ position: fixed; top:0; left:55%;}
+.bar li{ float:left; line-height:78px; text-indent:50px; }
+.bar li a{ color:#FFF;}
+
+.wom{width:100%; margin:0 auto; }
+.baot{ text-align:center; word-spacing:10px;}
+.baot a{ color:#666; font-size:16px; }
+.xbt{ margin-top:20px;}
+.baot a:hover{ color:#6FC;}
+
+
+.baobei{ padding:60px 0 60px 0;}
+.baobei li{ width:32%; line-height:30px;overflow:hidden; float:left; margin: 15px .5%;}
+.tup{width: 100%;
+    height: 230px;
+    overflow: hidden;}
+.baobei li img{width: 100%;
+    height: 230px; transform:scale(1,1);transition: all .3s ;}
+.mx{padding:10px 0 10px 0;}
+p{ color:#666; font-size:15px;}
+.baobei li img:hover {transform:scale(1.1,1.1); }
+
+.zzu{ width:100%; margin:0 auto; text-align: center;}
+.zzu h2{ padding:0 0 30px 0;}
+ dl{ width:16%; float:left;height: 270px;
+    line-height: 26px;2 margin-top:50px;margin:0 auto; }
+dd h4{ margin:25px 0 0 0;font-size:17px;}
+dd{font-size:12px;color:#666; line-height:25px;}
+
+
+.transparent{ background: url(http://www.niceui.cn/public/images/about_bg.jpg);
+background-attachment: fixed;width: 100%; height: 500px;text-align: center; color:#FFF; overflow: hidden; margin:60px 0;}
+.transparent h2{ margin:60px 0;}
+.transparent p{ color:#FFF; line-height:30px; margin-bottom:50px;}
+.transparent a{ background-color:#3C9; padding:10px 20px; word-spacing:20px; color:#FFF;}
+.transparent a:hover{background-color:#396;}
+
+
+.nice li{ width:32%; line-height:30px; float:left; margin-left:1%;}
+.nice li img{width:100%; height:230px;}
+.baot p{ margin:20px 0 60px 0;}
+
+.tm{ margin:60px 0; line-height:50px; }
+.hehu{ text-align:center;}
+.mobile li{ width:14%; height:44px;float:left; margin-left:2%; margin-bottom:20px;}
+.mobile li img{width:100%;height:100%; }
+
+.ywei{ width: 100%; background: #f4f4f4; height:auto;  }
+.logo{ padding-top:60px; line-height:40px; width:20%;}
+.logo img{ width:150px; height:34px;}
+.logo p{ display:inline-block;}
+dt{ font-size:17px;}
+dd a{ font-size:12px;}
+.wom{  float: right;  margin:-120px 0 50px 0;width:80%;}
+.wom dl{ width:17%; margin-left:2%;}
+.wom dd a{font-size:13px;color:#666; line-height:35px;}
+.pmu img{ margin-bottom:20px;}
+.pmu p{padding-bottom:20px;}
+.co{ text-align:center;}  
+ 
+     
+</style>
+<ul class="yxfu">
+<li><a href="#"></a></li>
+<li><a href="#"></a></li>
+<li><a href="#"></a></li>
+</ul>
+
+<div id="myCarousel" class="carousel slide">
+	<!-- 轮播（Carousel）指标 -->
+	<ol class="carousel-indicators">
+		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+		<li data-target="#myCarousel" data-slide-to="1"></li>
+		
+	</ol>   
+	<!-- 轮播（Carousel）项目 -->
+	<div class="carousel-inner">
+		<div class="item active">
+			<img src="http://image.niceui.cn/uploads/2017/05/17/1495001496.png" alt="First slide">
+			<div class="carousel-caption"></div>
+		</div>
+		<div class="item">
+			<img src="http://image.niceui.cn/uploads/2017/05/18/1495079163.jpg" alt="Second slide">
+			<div class="carousel-caption"></div>
+		</div>
+		
+	</div>
+	<!-- 轮播（Carousel）导航 -->
+	<a class="carousel-control left" href="#myCarousel" 
+	   data-slide="prev">&lsaquo;</a>
+	<a class="carousel-control right" href="#myCarousel" 
+	   data-slide="next">&rsaquo;</a>
+</div> 
+
+
+<script>
+	$(document).ready(function(){  
+
+	 $(document).scroll(function(){
+
+	   var mH= $(document).scrollTop();
+       if(mH>100){
+		   $(".navigation ").show();
+		   }else{
+			  $(".navigation ").hide();
+			   }
+		});
+		 });
+    </script>
+
+<div class="navigation">
+</div>
+<ul class="bar ma_clear">
+<li><a href="#">案例</a></li>
+<li><a href="#">服务</a></li>
+<li><a href="#">关于</a></li>
+<li><a href="#">动态</a></li>
+<li><a href="#">研究</a></li>
+</ul>
+</div>
+
+<div class="pmu">
+<div class="baot" >
+<h2>我们积累了各行业丰富的案例和经验</h2>
+<div class="xbt" >
+<a href="#">全部</a> / 
+<a href="#">网站</a> / 
+<a href="#">移动app</a> / 
+<a href="#">软件界面</a> / 
+<a href="#">互联网产品</a>
+</div>
+</div>
+
+<ul class="baobei ma_clear">
+<li><div class="tup"><a href="#" ><img  src="http://image.niceui.cn/uploads/2015/08/17/1439782477.jpg"/></a></div>
+<div class="mx">
+     <a href="#">优品汇手机助手</a>
+     <p>面向Android系统的应用商店客户端</p>
+     </div>
+</li>
+
+<li><div class="tup"><a href="#" ><img  src="http://image.niceui.cn/uploads/2015/08/17/1439782477.jpg"/></a></div>
+<div class="mx">
+     <a href="#">优品汇手机助手</a>
+     <p>面向Android系统的应用商店客户端</p>
+     </div>
+</li>
+
+<li><div class="tup"><a href="#" ><img  src="http://image.niceui.cn/uploads/2015/08/17/1439782477.jpg"/></a></div>
+<div class="mx">
+     <a href="#">优品汇手机助手</a>
+     <p>面向Android系统的应用商店客户端</p>
+     </div>
+</li>
+
+<li><div class="tup"><a href="#"><img src="http://image.niceui.cn/uploads/2016/10/19/1476849076.jpg" /></a></div>
+<div class="mx">
+     <a href="#">捣药兔app</a>
+     <p>用药查药移动解决方案</p>
+     </div>
+</li>
+<li><div class="tup"><a href="#"><img src="http://image.niceui.cn/uploads/2016/10/19/1476849076.jpg" /></a></div>
+<div class="mx">
+     <a href="#">捣药兔app</a>
+     <p>用药查药移动解决方案</p>
+     </div>
+</li>
+<li><div class="tup"><a href="#"><img src="http://image.niceui.cn/uploads/2016/10/19/1476849076.jpg" /></a></div>
+<div class="mx">
+     <a href="#">捣药兔app</a>
+     <p>用药查药移动解决方案</p>
+     </div>
+</li>
+
+<li><div class="tup"><a href="#"><img src="http://image.niceui.cn/uploads/2017/05/22/1495418518.jpg" /></a></div>
+<div class="mx">
+     <a href="#">懒熊体育</a>
+     <p>懒熊体育响应式平台用户体验设计与开发</p>
+     </div>
+</li>
+<li><div class="tup"><a href="#"><img src="http://image.niceui.cn/uploads/2017/05/22/1495418518.jpg" /></a></div>
+<div class="mx">
+     <a href="#">懒熊体育</a>
+     <p>懒熊体育响应式平台用户体验设计与开发</p>
+     </div>
+</li>
+<li><div class="tup"><a href="#"><img src="http://image.niceui.cn/uploads/2017/05/22/1495418518.jpg" /></a></div>
+<div class="mx">
+     <a href="#">懒熊体育</a>
+     <p>懒熊体育响应式平台用户体验设计与开发</p>
+     </div>
+</li>
+</ul>
+</div>
+
+<div class="pmu">
+<div class="zzu  ma_clear">
+<h2>我们专注用户体验设计和开发</h2>
+<dl>
+<dt><img src="http://image.niceui.cn/public/images/service_bt_04.png"></dt>
+<dd><h4>交互原型设计</h4></dd>
+<dd>信息架构</dd>
+<dd>低保真原型</dd>
+<dd>界面布局</dd>
+<dd>快速原型</dd>
+<dd>产品原型</dd></dl>
+
+<dl><dt><img src="http://image.niceui.cn/public/images/service_bt_06.png"></dt>
+<dd><h4>产品视觉设计</h4></dd>
+<dd>视觉设计</dd>
+<dd>设计规范与风格指南</dd>
+<dd>品牌形象</dd>
+<dd>图标设计</dd>
+<dd>前端架构及开发</dd></dl>
+
+<dl><dt><img src="http://image.niceui.cn/public/images/service_bt_08.png"></dt>
+<dd><h4>网站设计与开发</h4></dd>
+<dd>品牌网站设计开发</dd>
+<dd>展示营销网站</dd>
+<dd>电子商务网站</dd>
+<dd>手机网站/响应式网站</dd>
+<dd>前端开发与测试</dd></dl>
+
+<dl><dt><img src="http://image.niceui.cn/public/images/service_bt_10.png"></dt>
+<dd><h4>移动产品设计</h4></dd>
+<dd>移动界面设计</dd>
+<dd>iOS/Android界面设计</dd>
+<dd>微信公众平台</dd>
+<dd>html5设计开发</dd>
+<dd>移动网站设计开发</dd></dl>
+
+<dl><dt><img src="http://image.niceui.cn/public/images/service_bt_12.png"></dt>
+<dd><h4>软件界面设计</h4></dd>
+<dd>Windows软件界面设计</dd>
+<dd>MacOS软件界面设计</dd>
+<dd>车载软件界面</dd>
+<dd>电视界面</dd>
+<dd>其他终端软件界面</dd></dl>
+
+<dl style="margin-right:none;"><dt><img src="http://image.niceui.cn/public/images/service_bt_14.png"></dt>
+<dd><h4>品牌及平面设计</h4></dd>
+<dd>标志设计及企业VI体系</dd>
+<dd>产品平面设计</dd>
+<dd>手绘插画</dd>
+<dd>二维动画</dd>
+<dd>广告设计</dd></dl>
+</div>
+</div>
+</div>
+
+<div class="transparent">
+<h2>我们是设计师、工程师、梦想者<br>
+也是您的用户体验专家</h2>
+<p>nicedesign （奈思设计）成立于2010年，我们是一家专注用户体验设计开发与互联网品牌建设的设计公司，创立至今为200多位客户提<br>供了创新与专业的设计方案。设计服务范围包括：交互原型设计、产品视觉设计、网站设计与开发建设、移动及软件产品界面设计、图标<br>设计、品牌及平面设计等。我们的价值与宗旨是为用户和客户打造最nice的设计，用设计提升产品和企业价值。</p>
+<a href="#">咨询我们</a>
+<a href="#">了解更多</a>
+</div>
+
+
+
+
+<div class=" pmu">
+<div class="baot">
+<h2>如何练就优秀的项目体验</h2>
+<p>创意、流程、执行缺一不可</p>
+</div>
+<ul class="nice ma_clear">
+<li><a href="#"><img  src="http://image.niceui.cn/public/images/xiangmu_03.jpg"/></a>
+<p>从创始至今，我们的业务方向始终不变，专注做好一件事才能更好的追求高品质，这也是nicedesign存在的价值。在未来我们也是基于此信念而继续创造。</p>
+</li>
+<li><a href="#"><img  src="http://image.niceui.cn/public/images/xiangmu_03.jpg"/></a>
+<p>从创始至今，我们的业务方向始终不变，专注做好一件事才能更好的追求高品质，这也是nicedesign存在的价值。在未来我们也是基于此信念而继续创造。</p>
+</li>
+<li><a href="#"><img  src="http://image.niceui.cn/public/images/xiangmu_03.jpg"/></a>
+<p>从创始至今，我们的业务方向始终不变，专注做好一件事才能更好的追求高品质，这也是nicedesign存在的价值。在未来我们也是基于此信念而继续创造。</p>
+</li>
+</ul>
+</div>
+
+<div class="pmu">
+
+<div class="baot tm">
+<h2>他们选择了nicedesign</h2>
+<a href="#">全部客户列表></a>
+<ul class="mobile ma_clear ">
+<li><img src="http://image.niceui.cn/public/images/l1.jpg" /></li>
+<li><img src="http://image.niceui.cn/public/images/l2.jpg" /></li>
+<li><img src="http://image.niceui.cn/public/images/l4.jpg" /></li>
+<li><img src="http://image.niceui.cn/public/images/l12.jpg" /></li>
+<li><img src="http://image.niceui.cn/public/images/l5.jpg" /></li>
+<li><img src="http://image.niceui.cn/public/images/l1.jpg" /></li>
+<li><img src="http://image.niceui.cn/public/images/l2.jpg" /></li>
+<li><img src="http://image.niceui.cn/public/images/l4.jpg" /></li>
+<li><img src="http://image.niceui.cn/public/images/l12.jpg" /></li>
+<li><img src="http://image.niceui.cn/public/images/l5.jpg" /></li>
+<li><img src="http://image.niceui.cn/public/images/l12.jpg" /></li>
+<li><img src="http://image.niceui.cn/public/images/l5.jpg" /></li>
+</ul>
+</div>
+</div>
+
+<div class="ywei">
+<div class="pmu ma_clear">
+<div class="logo"><img  src="http://image.niceui.cn/public/images/foot_logo.png"/>
+<p>设计和技术创造极致用户体验</p></div>
+<div class="wom">
+<dl>
+<dt>我们</dt>
+<dd><a href="#">项目服务</a></dd>
+<dd><a href="#">关于我们</a></dd>
+<dd><a href="#">新闻动态</a></dd>
+<dd><a href="#">加入我们</a></dd>
+<dd><a href="#">联系我们</a></dd>
+</dl>
+
+<dl>
+<dt>案例</dt>
+<dd><a href="#">全部</a></dd>
+<dd><a href="#">网站</a></dd>
+<dd><a href="#">移动app</a></dd>
+<dd><a href="#">桌面软件</a></dd>
+<dd><a href="#">品牌及平面</a></dd>
+</dl>
+
+<dl>
+<dt>方案</dt>
+<dd><a href="#">移动互联网</a></dd>
+<dd><a href="#">在线金融</a></dd>
+<dd><a href="#">传统企业转型</a></dd>
+<dd><a href="#">医疗健康</a></dd>
+<dd><a href="#">创业服务</a></dd>
+</dl>
+
+<dl>
+<dt>发现</dt>
+<dd><a href="#">合作伙伴</a></dd>
+<dd><a href="#">研究</a></dd>
+<dd><a href="#">nice实验室</a></dd>
+<dd><a href="#">留言板</a></dd>
+<dd><a href="#">友情联接</a></dd>
+</dl>
+
+<dl>
+<dt>商务合作</dt>
+<dd><a href="#">邮箱：hello@niceui.cn</a></dd>
+<dd><a href="#">手机：18813146300</a></dd>
+<dd><a href="#">座机：（+86）010-57281080</a></dd>
+<dd><a href="#">Q Q：949677513点击交谈</a></dd>
+<dd><a href="#">地址：北京 昌平 霍营 国风美唐2-913</a></dd>
+</dl>
+</div>
+</div> 
+<div class="co pmu">
+<a href="#"><img src="https://img.alicdn.com/imgextra/i1/1580301054/TB2cfHYax9fF1Jjy1XcXXc_rVXa_!!1580301054.png" /></a>
+<p>Copyright © 2014-2017 nicedesign 京ICP备15000202号-5</p>
+</div>
+</div>
+
+
+</body>
+</html>
