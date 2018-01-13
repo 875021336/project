@@ -1,6 +1,7 @@
 ## 瀑布流新闻网站
 预览地址：http://jsbin.com/ruguwuvomo/edit?html,output
 ## 懒加载原理
+懒加载预览： https://ouyangbeibei.github.io/project/layout.md/lazyLoad.md/lazyLoad.html
 
     原理：先将img标签中的src链接设为同一张图片（空白图片），将其真正的图片地址存储再img标签的自定义属性中（比如data-src）。当js监听到该图片元素进入可视窗口时，即将自定义属性中的地址存储到src属性中，达到懒加载的效果。
 
@@ -9,6 +10,7 @@
 
 
 ## 瀑布流原理
+瀑布流预览： http://jsbin.com/dicafopefu/edit?html,output
 瀑布流布局由pinterest.com网站首创，它的原理是：先通过计算出一排能够容纳几列元素，然后寻找各列之中所有元素高度之和的最小者，并将新的元素添加到该列上，然后继续寻找所有列的各元素之和的最小者，继续添加至该列上，如此循环下去，直至所有元素均能够按要求排列为止；
 
 ##木桶原理
